@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+  backend:
+    image: ${DOCKER_REGISTRY-}apiusers
+    build:
+      context: .
+      dockerfile: api-users/Dockerfile
+  client:
+     image: client
+     build:
+        context: ./users-client
+        dockerfile: Dockerfile
+  proxy:
+      image: nginx 
+
